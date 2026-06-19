@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="id">
+
+<head>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Statistik</title>
+
+<link rel="stylesheet" href="assets/css/style.css">
+
+<style>
+
+/* TAMBAHAN GRAFIK BUNDER */
+
+.circle-chart{
+  width:220px;
+  height:220px;
+  border-radius:50%;
+  margin:20px auto;
+  position:relative;
+}
+
+.circle-chart::before{
+  content:'';
+  position:absolute;
+  width:120px;
+  height:120px;
+  background:white;
+  border-radius:50%;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+}
+
+.chart-center{
+  position:absolute;
+  top:50%;
+  left:50%;
+  transform:translate(-50%,-50%);
+  text-align:center;
+  z-index:2;
+}
+
+.chart-center h2{
+  color:#198754;
+  font-size:28px;
+}
+
+.chart-center p{
+  font-size:13px;
+  color:#777;
+}
+
+.stats{
+  align-items:flex-start;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- SIDEBAR -->
+
+<aside class="sidebar">
+
+<h2>SidaKangen</h2>
+
+<ul>
+<li><a href="index.html">Beranda</a></li>
+<li><a href="profil-desa.html">Profil Desa</a></li>
+<li><a href="statistik.html">Statistik</a></li>
+<li><a href="pemerintahan.html">Pemerintahan</a></li>
+<li><a href="layanan.html">Layanan</a></li>
+<li><a href="berita.html">Berita</a></li>
+<li><a href="galeri.html">Galeri</a></li>
+<li><a href="potensi.html">Potensi</a></li>
+<li><a href="kontak.html">Kontak</a></li>
+</ul>
+
+</aside>
+
+<!-- MAIN -->
+
+<main class="main">
+
+<!-- HEADER -->
+
+<h1 class="title">Statistik Penduduk</h1>
+
+<!-- CARD STATISTIK -->
+
+<div class="stats-wrapper">
+
+<div class="stats">
+
+<div class="card">
+
+<h3>👨 Jumlah Penduduk</h3>
+
+<p class="stat-number">2.616</p>
+
+<br>
+
+<small>Total warga desa</small>
+
+</div>
+
+<div class="card">
+
+<h3>👨‍👩‍👧 Kepala Keluarga</h3>
+
+<p class="stat-number">856</p>
+
+<br>
+
+<small>Total KK</small>
+
+</div>
+
+<div class="card">
+
+<h3>👨 Laki-laki</h3>
+
+<p class="stat-number">1.320</p>
+
+<br>
+
+<small>Penduduk pria</small>
+
+</div>
+
+<div class="card">
+
+<h3>👩 Perempuan</h3>
+
+<p class="stat-number">1.296</p>
+
+<br>
+
+<small>Penduduk wanita</small>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- STATISTIK USIA -->
+
+<h1 class="title">Statistik Usia</h1>
+
+<div class="stats usia-grid">
+
+<div class="card">
+<div class="chart-item">
+
+<div class="chart-info">
+<span>0 - 14 Tahun</span>
+<span>356</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:14%; background:#198754;"></div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="chart-item">
+
+<div class="chart-info">
+<span>15 - 24 Tahun</span>
+<span>394</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:15%; background:#1aa7a1;"></div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="chart-item">
+
+<div class="chart-info">
+<span>25 - 39 Tahun</span>
+<span>573</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:22%; background:#20c997;"></div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="chart-item">
+
+<div class="chart-info">
+<span>40 - 54 Tahun</span>
+<span>640</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:24%; background:#0ea5e9;"></div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="chart-item">
+
+<div class="chart-info">
+<span>55 - 69 Tahun</span>
+<span>422</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:16%; background:#38bdf8;"></div>
+</div>
+
+</div>
+</div>
+
+<div class="card">
+<div class="chart-item">
+
+<div class="chart-info">
+<span>70+ Tahun</span>
+<span>231</span>
+</div>
+
+<div class="bar">
+<div class="fill" style="width:9%; background:#67e8f9;"></div>
+</div>
+
+</div>
+</div>
+
+</div>
+
+<!-- DATA PENDIDIKAN -->
+
+<h1 class="title">Data Pendidikan</h1>
+
+<div class="stats">
+
+<div class="card">
+
+<table>
+
+<tr>
+<th>Pendidikan</th>
+<th>Jumlah</th>
+</tr>
+
+<tr>
+<td>Tidak / Belum Sekolah</td>
+<td>313</td>
+</tr>
+
+<tr>
+<td>Tidak Tamat SD</td>
+<td>568</td>
+</tr>
+
+<tr>
+<td>Tamat SD</td>
+<td>568</td>
+</tr>
+
+<tr>
+<td>SLTP / Sederajat</td>
+<td>581</td>
+</tr>
+
+<tr>
+<td>SLTA / Sederajat</td>
+<td>679</td>
+</tr>
+
+<tr>
+<td>Diploma I / II</td>
+<td>6</td>
+</tr>
+
+<tr>
+<td>Akademi / Diploma III / S. Muda</td>
+<td>32</td>
+</tr>
+
+<tr>
+<td>Diploma IV / Strata I</td>
+<td>118</td>
+</tr>
+
+<tr>
+<td>Strata II</td>
+<td>5</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h3>Grafik Pendidikan</h3>
+
+<div class="circle-chart"
+style="background:
+conic-gradient(
+#198754 0% 20%,
+#1aa7a1 20% 40%,
+#20c997 40% 60%,
+#0ea5e9 60% 100%
+);">
+
+<div class="chart-center">
+<h2>679</h2>
+<p>SLTA Terbanyak</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- RENTANG UMUR -->
+
+<h1 class="title">Rentang Umur</h1>
+
+<div class="stats">
+
+<div class="card">
+
+<table>
+
+<tr>
+<th>Rentang Umur</th>
+<th>Jumlah</th>
+</tr>
+
+<tr>
+<td>0 - 14 Tahun</td>
+<td>356</td>
+</tr>
+
+<tr>
+<td>15 - 24 Tahun</td>
+<td>394</td>
+</tr>
+
+<tr>
+<td>25 - 39 Tahun</td>
+<td>573</td>
+</tr>
+
+<tr>
+<td>40 - 54 Tahun</td>
+<td>640</td>
+</tr>
+
+<tr>
+<td>55 - 69 Tahun</td>
+<td>422</td>
+</tr>
+
+<tr>
+<td>70+ Tahun</td>
+<td>231</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h3>Grafik Rentang Umur</h3>
+
+<div class="circle-chart"
+style="background:
+conic-gradient(
+#198754 0% 14%,
+#1aa7a1 14% 29%,
+#20c997 29% 51%,
+#0ea5e9 51% 75%,
+#38bdf8 75% 91%,
+#67e8f9 91% 100%
+);">
+
+<div class="chart-center">
+<h2>640</h2>
+<p>Usia Dominan</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PEKERJAAN -->
+
+<h1 class="title">Pekerjaan</h1>
+
+<div class="stats">
+
+<div class="card">
+
+<table>
+
+<tr>
+<th>Pekerjaan</th>
+<th>Jumlah</th>
+</tr>
+
+<tr>
+<td>Petani</td>
+<td>685</td>
+</tr>
+
+<tr>
+<td>Buruh Harian Lepas</td>
+<td>412</td>
+</tr>
+
+<tr>
+<td>Wiraswasta</td>
+<td>286</td>
+</tr>
+
+<tr>
+<td>Pelajar / Mahasiswa</td>
+<td>523</td>
+</tr>
+
+<tr>
+<td>Ibu Rumah Tangga</td>
+<td>340</td>
+</tr>
+
+<tr>
+<td>PNS</td>
+<td>24</td>
+</tr>
+
+<tr>
+<td>Tidak Bekerja</td>
+<td>346</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h3>Grafik Pekerjaan</h3>
+
+<div class="circle-chart"
+style="background:
+conic-gradient(
+#198754 0% 35%,
+#1aa7a1 35% 55%,
+#20c997 55% 70%,
+#0ea5e9 70% 90%,
+#67e8f9 90% 100%
+);">
+
+<div class="chart-center">
+<h2>685</h2>
+<p>Petani</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- JENIS KELAMIN -->
+
+<h1 class="title">Jenis Kelamin</h1>
+
+<div class="stats">
+
+<div class="card">
+
+<table>
+
+<tr>
+<th>Jenis Kelamin</th>
+<th>Jumlah</th>
+</tr>
+
+<tr>
+<td>Laki-laki</td>
+<td>1320</td>
+</tr>
+
+<tr>
+<td>Perempuan</td>
+<td>1296</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h3>Grafik Jenis Kelamin</h3>
+
+<div class="circle-chart"
+style="background:
+conic-gradient(
+#198754 0% 50.46%,
+#1aa7a1 50.46% 100%
+);">
+
+<div class="chart-center">
+<h2>2616</h2>
+<p>Total Penduduk</p>
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- KEPEMILIKAN KIA -->
+
+<h1 class="title">Kepemilikan KIA</h1>
+
+<div class="stats">
+
+<div class="card">
+
+<table>
+
+<tr>
+<th>Status KIA</th>
+<th>Jumlah</th>
+</tr>
+
+<tr>
+<td>Memiliki KIA</td>
+<td>428</td>
+</tr>
+
+<tr>
+<td>Belum Memiliki KIA</td>
+<td>215</td>
+</tr>
+
+</table>
+
+</div>
+
+<div class="card">
+
+<h3>Grafik Kepemilikan KIA</h3>
+
+<div class="circle-chart"
+style="background:
+conic-gradient(
+#198754 0% 67%,
+#38bdf8 67% 100%
+);">
+
+<div class="chart-center">
+<h2>428</h2>
+<p>Memiliki KIA</p>
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</div>
+
+</div>
+
+</div>
+
+</main>
+
+</div>
+
+</body>
+
+</html>

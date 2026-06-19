@@ -1,0 +1,32 @@
+@media(max-width:1200px){
+
+  .stats{
+    grid-template-columns:repeat(2,1fr);
+  }
+
+}
+
+@media(max-width:768px){
+
+  .container{
+    flex-direction:column;
+  }
+
+  .sidebar{
+    width:100%;
+    height:auto;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+
+  .hero{
+    height:250px;
+  }
+
+  .overlay h1{
+    font-size:28px;
+  }
+
+}

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan Desa - SidaKangen</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+    <style>
+        /* CSS Modal */
+        .modal { display: none; position: fixed; z-index: 9999; left: 0; top: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6); justify-content: center; align-items: center; backdrop-filter: blur(5px); }
+        .modal-content { background: white; padding: 30px; border-radius: 25px; width: 90%; max-width: 450px; position: relative; box-shadow: 0 10px 30px rgba(0,0,0,0.3); }
+        .modal-content h3 { color: #0d9488; margin-bottom: 20px; font-size: 22px; }
+        .form-group { margin-bottom: 15px; text-align: left; }
+        .form-group label { display: block; font-size: 14px; margin-bottom: 5px; font-weight: 600; color: #333; }
+        .form-group input, .form-group textarea, .form-group select {
+            width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 12px; outline: none; font-family: 'Poppins', sans-serif;
+        }
+        .btn-submit { width: 100%; padding: 14px; background: #0d9488; color: white; border: none; border-radius: 15px; font-weight: bold; cursor: pointer; font-size: 16px; transition: 0.3s; }
+        .btn-submit:hover { background: #0b7a6f; }
+        .close-modal { position: absolute; right: 25px; top: 20px; font-size: 28px; cursor: pointer; color: #aaa; }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <aside class="sidebar">
+        <h2>SidaKangen</h2>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil-desa.html">Profil Desa</a></li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li><a href="pemerintahan.html">Pemerintahan</a></li>
+            <li><a href="layanan.html">Layanan</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="potensi.html">Potensi</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <h1 class="title">Layanan Desa</h1>
+
+        <div class="stats">
+            <!-- Tombol dibedakan ID tipenya -->
+            <div class="card">
+                <h3>Surat Pengantar</h3>
+                <p>Minta surat domisili, SKTM, dll.</p>
+                <button onclick="bukaModal('surat')">Ajukan</button>
+            </div>
+
+            <div class="card">
+                <h3>Pengaduan</h3>
+                <p>Laporkan masalah infrastruktur atau sosial.</p>
+                <button onclick="bukaModal('pengaduan')">Kirim</button>
+            </div>
+
+            <div class="card">
+                <h3>Cek Status</h3>
+                <p>Pantau proses pengajuan Anda.</p>
+                <button onclick="bukaModal('cek')">Cek</button>
+            </div>
+        </div>
+    </main>
+</div>
+
+<!-- MODAL BOX -->
+<div id="modalLayanan" class="modal">
+    <div class="modal-content">
+        <span class="close-modal" onclick="tutupModal()">&times;</span>
+        <h3 id="judulModal">Form Layanan</h3>
+        
+        <!-- Area tempat input berubah-ubah -->
+        <div id="isiForm"></div>
+
+        <button class="btn-submit" id="btnProses" onclick="prosesData()">Kirim Pengajuan</button>
+    </div>
+</div>
+
+<script>
+    let tipeSekarang = "";
+
+    function bukaModal(tipe) {
+        tipeSekarang = tipe;
+        const modal = document.getElementById('modalLayanan');
+        const judul = document.getElementById('judulModal');
+        const isi = document.getElementById('isiForm');
+        
+        modal.style.display = 'flex';
+        isi.innerHTML = ""; // Bersihkan form sebelumnya
+
+        if (tipe === 'surat') {
+            judul.innerText = "Form Surat Pengantar";
+            isi.innerHTML = `
+                <div class="form-group">
+                    <label>Nama Lengkap</label>
+                    <input type="text" id="f_nama" placeholder="Nama sesuai KTP">
+                </div>
+                <div class="form-group">
+                    <label>NIK</label>
+                    <input type="number" id="f_nik" placeholder="16 digit NIK">
+                </div>
+                <div class="form-group">
+                    <label>Jenis Surat</label>
+                    <select id="f_jenis">
+                        <option value="Domisili">Keterangan Domisili</option>
+                        <option value="SKTM">SKTM (Kurang Mampu)</option>
+                        <option value="SKU">Keterangan Usaha</option>
+                    </select>
+                </div>
+            `;
+        } 
+        else if (tipe === 'pengaduan') {
+            judul.innerText = "Form Pengaduan Warga";
+            isi.innerHTML = `
+                <div class="form-group">
+                    <label>Nama Pelapor</label>
+                    <input type="text" id="f_nama" placeholder="Nama Anda">
+                </div>
+                <div class="form-group">
+                    <label>Lokasi Kejadian</label>
+                    <input type="text" id="f_lokasi" placeholder="Contoh: RT 02 RW 01">
+                </div>
+                <div class="form-group">
+                    <label>Isi Aduan</label>
+                    <textarea id="f_masalah" rows="4" placeholder="Ceritakan masalah Anda..."></textarea>
+                </div>
+            `;
+        } 
+        else if (tipe === 'cek') {
+            judul.innerText = "Cek Status Pengajuan";
+            isi.innerHTML = `
+                <div class="form-group">
+                    <label>Nomor Tiket / Resi</label>
+                    <input type="text" id="f_tiket" placeholder="Contoh: SDK-2024001">
+                </div>
+                <p style="font-size: 12px; color: #666;">*Masukkan nomor tiket yang Anda dapat saat mendaftar.</p>
+            `;
+            document.getElementById('btnProses').innerText = "Cek Sekarang";
+        }
+    }
+
+    function tutupModal() {
+        document.getElementById('modalLayanan').style.display = 'none';
+        document.getElementById('btnProses').innerText = "Kirim Pengajuan";
+    }
+
+    function prosesData() {
+        if (tipeSekarang === 'surat') {
+            const nama = document.getElementById('f_nama').value;
+            if(nama === "") return alert("Mohon isi Nama!");
+            alert("PENGAJUAN SURAT BERHASIL!\n\nHalo " + nama + ", permohonan surat Anda sedang diproses oleh admin desa.");
+        } 
+        else if (tipeSekarang === 'pengaduan') {
+            const aduan = document.getElementById('f_masalah').value;
+            if(aduan === "") return alert("Mohon isi aduan!");
+            alert("PENGADUAN DITERIMA!\n\nLaporan Anda telah kami catat dan akan segera ditindaklanjuti. Terima kasih.");
+        } 
+        else if (tipeSekarang === 'cek') {
+            const tiket = document.getElementById('f_tiket').value;
+            if(tiket === "") return alert("Masukkan nomor tiket!");
+            alert("STATUS DITEMUKAN!\n\nTiket: " + tiket + "\nStatus: Sedang dalam Peninjauan Kepala Desa.");
+        }
+        tutupModal();
+    }
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById('modalLayanan')) tutupModal();
+    }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</body>
+</html>

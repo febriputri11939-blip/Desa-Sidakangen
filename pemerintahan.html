@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pemerintahan Desa - SidaKangen</title>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/style.css">
+
+    <style>
+        /* CSS KHUSUS PEMERINTAHAN AGAR RAPI */
+        .pemerintah-grid {
+            display: grid;
+            /* Membuat 3 kolom di layar besar, otomatis menyesuaikan di layar kecil */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .pemerintah-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            text-align: center;
+            border-bottom: 5px solid #0d9488; /* Warna Teal biar senada */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pemerintah-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(13, 148, 136, 0.2);
+        }
+
+        /* Mengunci ukuran foto agar semua SAMA BESAR */
+        .pemerintah-card img {
+            width: 100%;
+            height: 350px; /* Tinggi foto dikunci */
+            object-fit: cover; /* Foto akan terpotong rapi tanpa gepeng */
+            object-position: top; /* Fokus ke wajah */
+        }
+
+        .pemerintah-info {
+            padding: 20px;
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .pemerintah-info h3 {
+            color: #0d9488;
+            margin-bottom: 5px;
+            font-size: 20px;
+            font-weight: 700;
+        }
+
+        .pemerintah-info p {
+            color: #64748b;
+            font-size: 15px;
+            font-weight: 500;
+            margin: 0;
+        }
+
+        /* Penyesuaian Main Content */
+        .main {
+            margin-left: 280px;
+            padding: 40px;
+        }
+
+        @media (max-width: 768px) {
+            .main { margin-left: 0; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>SidaKangen</h2>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil-desa.html">Profil Desa</a></li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li><a href="pemerintahan.html" class="active">Pemerintahan</a></li>
+            <li><a href="layanan.html">Layanan</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="potensi.html">Potensi</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="main">
+        <h1 class="title">Struktur Pemerintahan Desa</h1>
+
+        <div class="pemerintah-grid">
+            
+            <!-- 1. KEPALA DESA -->
+            <div class="pemerintah-card">
+                <img src="assets/img/kepala desa pak wagimin.jpg" alt="Kepala Desa">
+                <div class="pemerintah-info">
+                    <h3>Wagimin</h3>
+                    <p>Kepala Desa</p>
+                </div>
+            </div>
+
+            <!-- 2. SEKRETARIS -->
+            <div class="pemerintah-card">
+                <img src="assets/img/sekertaris pak suhadi.jpeg" alt="Sekretaris Desa">
+                <div class="pemerintah-info">
+                    <h3>Suhadi</h3>
+                    <p>Sekretaris Desa</p>
+                </div>
+            </div>
+
+            <!-- 3. KEPALA DUSUN I -->
+            <div class="pemerintah-card">
+                <img src="assets/img/kepala dusun 1 pak basirun.jpg" alt="Kadus I">
+                <div class="pemerintah-info">
+                    <h3>Basirun</h3>
+                    <p>Kepala Dusun I</p>
+                </div>
+            </div>
+
+            <!-- 4. KEPALA DUSUN II -->
+            <div class="pemerintah-card">
+                <img src="assets/img/WAHYUDI.jpg" alt="Kadus II">
+                <div class="pemerintah-info">
+                    <h3>Wahyudi Awan, A.Md</h3>
+                    <p>Kepala Dusun II</p>
+                </div>
+            </div>
+
+            <!-- 5. KAUR KEUANGAN -->
+            <div class="pemerintah-card">
+                <img src="assets/img/kaur keuangan RUNIASIH,AKS.jpg" alt="Kaur Keuangan">
+                <div class="pemerintah-info">
+                    <h3>Runiasih, AKS</h3>
+                    <p>Kaur Keuangan</p>
+                </div>
+            </div>
+
+            <!-- 6. KAUR UMUM -->
+            <div class="pemerintah-card">
+                <img src="assets/img/kaur  umum IRWAN MARDIYANTO.jpg" alt="Kaur Umum">
+                <div class="pemerintah-info">
+                    <h3>Irwan Mardiyanto</h3>
+                    <p>Kaur Umum</p>
+                </div>
+            </div>
+
+            <!-- 7. KAUR PERENCANAAN -->
+            <div class="pemerintah-card">
+                <img src="assets/img/Kaur Perencanaan saptono.jpg" alt="Kaur Perencanaan">
+                <div class="pemerintah-info">
+                    <h3>Saptono</h3>
+                    <p>Kaur Perencanaan</p>
+                </div>
+            </div>
+
+            <!-- 8. KASI PEMERINTAHAN -->
+            <div class="pemerintah-card">
+                <img src="assets/img/kasi pemerintahan ANGGIT WIDODO, SP.PD.png" alt="Kasi Pemerintahan">
+                <div class="pemerintah-info">
+                    <h3>Anggit Widodo, SP.PD</h3>
+                    <p>Kasi Pemerintahan</p>
+                </div>
+            </div>
+
+            <!-- 9. KASI PELAYANAN -->
+            <div class="pemerintah-card">
+                <img src="assets/img/kassi pelayanan jurohman.jpg" alt="Kasi Pelayanan">
+                <div class="pemerintah-info">
+                    <h3>Jurohman</h3>
+                    <p>Kasi Pelayanan</p>
+                </div>
+            </div>
+
+        </div> <!-- Akhir Grid -->
+    </main>
+</div>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</body>
+</html>

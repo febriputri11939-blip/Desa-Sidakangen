@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Beranda - SidaKangen</title>
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<div class="container">
+    <!-- SIDEBAR -->
+    <aside class="sidebar">
+        <h2>SidaKangen</h2>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil-desa.html">Profil Desa</a></li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li><a href="pemerintahan.html">Pemerintahan</a></li>
+            <li><a href="layanan.html">Layanan</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="galeri.html">Galeri</a></li>
+            <li><a href="potensi.html">Potensi</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <!-- HERO SECTION -->
+        <section class="hero">
+            <div class="overlay">
+                <h1>Selamat Datang di SidaKangen</h1>
+                <p>Sistem Informasi Desa Modern dan Pelayanan Digital</p>
+                <div class="search-box">
+                    <input type="text" id="searchInput" placeholder="Cari informasi desa...">
+                    <button onclick="jalankanPencarian()">Cari</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- PROFIL FOTO DESA -->
+        <h2 class="title">Profil Foto Desa</h2>
+        <section class="stats">
+            <div class="card"><img src="assets/img/balai desa.jpg"><p>Balai Desa</p></div>
+            <div class="card"><img src="assets/img/kerja bakti limnas.png"><p>Kegiatan Warga</p></div>
+            <div class="card"><img src="assets/img/sawah2.jpeg"><p>Persawahan</p></div>
+        </section>
+
+        <!-- STATISTIK -->
+        <h2 class="title">Statistik Kependudukan</h2>
+        <section class="stats">
+            <div class="card"><h3>Jumlah Penduduk</h3><h1>2.456</h1></div>
+            <div class="card"><h3>Kepala Keluarga</h3><h1>856</h1></div>
+            <div class="card"><h3>Laki-laki</h3><h1>1.238</h1></div>
+            <div class="card"><h3>Perempuan</h3><h1>1.218</h1></div>
+        </section>
+    </main>
+</div>
+
+<script>
+function jalankanPencarian() {
+    // 1. Ambil kata kunci dari input
+    let kataKunci = document.getElementById('searchInput').value.toLowerCase();
+
+    // 2. Jika input kosong, jangan lakukan apa-apa
+    if (kataKunci.trim() === "") {
+        alert("Silakan masukkan kata kunci pencarian...");
+        return;
+    }
+
+    // 3. LOGIKA PENCARIAN GLOBAL (Daftar Kata Kunci & Tujuan Halaman)
+    
+    // Pencarian seputar Pemerintahan/Perangkat Desa
+    if (kataKunci.includes("kepala") || kataKunci.includes("wagimin") || kataKunci.includes("pemerintah") || kataKunci.includes("perangkat") || kataKunci.includes("suhadi")) {
+        window.location.href = "pemerintahan.html";
+    } 
+    
+    // Pencarian seputar Layanan/Surat
+    else if (kataKunci.includes("layanan") || kataKunci.includes("surat") || kataKunci.includes("pengaduan") || kataKunci.includes("sktm") || kataKunci.includes("domisili")) {
+        window.location.href = "layanan.html";
+    } 
+    
+    // Pencarian seputar Berita/Artikel
+    else if (kataKunci.includes("berita") || kataKunci.includes("artikel") || kataKunci.includes("pembangunan") || kataKunci.includes("kegiatan")) {
+        window.location.href = "berita.html";
+    } 
+    
+    // Pencarian seputar Statistik/Penduduk
+    else if (kataKunci.includes("penduduk") || kataKunci.includes("statistik") || kataKunci.includes("jumlah") || kataKunci.includes("kk")) {
+        window.location.href = "statistik.html";
+    } 
+    
+    // Pencarian seputar Foto/Galeri
+    else if (kataKunci.includes("foto") || kataKunci.includes("galeri") || kataKunci.includes("gambar")) {
+        window.location.href = "galeri.html";
+    }
+    
+    // Pencarian seputar Alamat/Kontak
+    else if (kataKunci.includes("kontak") || kataKunci.includes("telepon") || kataKunci.includes("alamat") || kataKunci.includes("lokasi")) {
+        window.location.href = "kontak.html";
+    }
+
+    // Jika tidak ditemukan
+    else {
+        alert("Informasi '" + kataKunci + "' tidak ditemukan. Coba kata kunci lain (seperti: Kepala Desa, Layanan, atau Berita).");
+    }
+}
+
+// Tambahan: Tekan 'Enter' untuk mencari
+document.getElementById("searchInput").addEventListener("keyup", function(event) {
+    if (event.key === "Enter") {
+        jalankanPencarian();
+    }
+});
+
+</script>
+</script>
+</body>
+</html>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">

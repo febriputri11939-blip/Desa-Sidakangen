@@ -1,0 +1,17 @@
+const ctx = document.getElementById('usiaChart');
+
+new Chart(ctx, {
+  type: 'bar',
+  data: {
+    labels: ['0-14', '15-24', '25-34', '35-44', '45-54'],
+    datasets: [{
+      label: 'Jumlah Penduduk',
+      data: [362, 318, 412, 386, 324],
+      borderWidth: 1
+    }]
+  },
+
+  options: {
+    responsive: true,
+  }
+});

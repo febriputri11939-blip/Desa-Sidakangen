@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kontak Desa - SidaKangen</title>
+  <link rel="stylesheet" href="assets/css/style.css">
+  
+  <style>
+    /* --- CSS TAMBAHAN UNTUK MODAL NOTIFIKASI --- */
+    .modal-notif {
+      display: none;
+      position: fixed;
+      z-index: 10000;
+      left: 0; top: 0;
+      width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      backdrop-filter: blur(8px);
+      justify-content: center;
+      align-items: center;
+    }
+
+    .notif-content {
+      background: white;
+      padding: 40px 30px;
+      border-radius: 30px;
+      text-align: center;
+      width: 90%;
+      max-width: 350px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+      animation: bounceIn 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes bounceIn {
+      0% { transform: scale(0.5); opacity: 0; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    .icon-box {
+      width: 70px; height: 70px;
+      background: #eefaf7;
+      color: #0d9488;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 0 auto 20px;
+      font-size: 35px;
+      border: 3px solid #0d9488;
+    }
+
+    .btn-notif {
+      background: #0d9488;
+      color: white;
+      border: none;
+      padding: 12px 30px;
+      border-radius: 15px;
+      font-weight: 600;
+      cursor: pointer;
+      width: 100%;
+      margin-top: 15px;
+      transition: 0.3s;
+    }
+
+    .btn-notif:hover {
+      background: #0b7a6f;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="container">
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <h2>SidaKangen</h2>
+    <ul>
+      <li><a href="index.html">Beranda</a></li>
+      <li><a href="profil-desa.html">Profil Desa</a></li>
+      <li><a href="statistik.html">Statistik</a></li>
+      <li><a href="pemerintahan.html">Pemerintahan</a></li>
+      <li><a href="layanan.html">Layanan</a></li>
+      <li><a href="berita.html">Berita</a></li>
+      <li><a href="galeri.html">Galeri</a></li>
+      <li><a href="potensi.html">Potensi</a></li>
+      <li><a href="kontak.html">Kontak</a></li>
+    </ul>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="main">
+    <h1 class="title">Kontak Desa</h1>
+
+    <div class="contact-container">
+      <!-- INFO KONTAK -->
+      <div class="contact-info">
+        <div class="contact-card">
+          <h3>Email</h3>
+          <p>sidakangen@gmail.com</p>
+        </div>
+        <div class="contact-card">
+          <h3>Telepon</h3>
+          <p>08123456789</p>
+        </div>
+        <div class="contact-card">
+          <h3>Alamat</h3>
+          <p>Desa SidaKangen, Jawa Tengah</p>
+        </div>
+        <div class="contact-card">
+          <h3>Jam Pelayanan</h3>
+          <p>08.00 - 15.00 WIB</p>
+        </div>
+      </div>
+
+      <!-- FORM PESAN (Ditambahkan ID dan Onclick) -->
+      <div class="contact-form">
+        <h2>Kirim Pesan</h2>
+        <input type="text" id="inputNama" placeholder="Nama Lengkap">
+        <input type="email" id="inputEmail" placeholder="Email">
+        <input type="text" id="inputSubjek" placeholder="Subjek">
+        <textarea id="inputPesan" placeholder="Tulis pesan"></textarea>
+        <button onclick="kirimPesan()">Kirim Pesan</button>
+      </div>
+    </div>
+
+    <!-- MAP -->
+    <div class="map-box">
+      <iframe src="https://maps.google.com/maps?q=Desa Sidakangen,Kalimanah,Purbaliingga,jawa Tengah&t=&z=13&ie=UTF8&iwloc=&output=embed" width="100%" height="400"></iframe>
+    </div>
+  </main>
+</div>
+
+<!-- MODAL NOTIFIKASI SUKSES -->
+<div id="notifSukses" class="modal-notif">
+    <div class="notif-content">
+        <div class="icon-box">✓</div>
+        <h3>Pesan Terkirim!</h3>
+        <p id="pesanSukses">Halo, pesan Anda telah berhasil kami terima.</p>
+        <button class="btn-notif" onclick="tutupNotif()">Baik, Mengerti</button>
+    </div>
+</div>
+
+<!-- JAVASCRIPT -->
+<script>
+  function kirimPesan() {
+    // 1. Ambil data dari inputan
+    const nama = document.getElementById('inputNama').value;
+    const email = document.getElementById('inputEmail').value;
+    const subjek = document.getElementById('inputSubjek').value;
+    const pesan = document.getElementById('inputPesan').value;
+
+    // 2. Validasi (Jika ada yang kosong)
+    if (nama === "" || email === "" || pesan === "") {
+        alert("Mohon isi Nama, Email, dan Pesan Anda terlebih dahulu!");
+        return;
+    }
+
+    // 3. Munculkan Notifikasi Sukses
+    document.getElementById('notifSukses').style.display = 'flex';
+    document.getElementById('pesanSukses').innerHTML = `Terima kasih Bapak/Ibu <b>${nama}</b>. Pesan Anda mengenai <b>"${subjek}"</b> telah terkirim ke admin desa.`;
+
+    // 4. Bersihkan Form
+    document.getElementById('inputNama').value = "";
+    document.getElementById('inputEmail').value = "";
+    document.getElementById('inputSubjek').value = "";
+    document.getElementById('inputPesan').value = "";
+  }
+
+  function tutupNotif() {
+    document.getElementById('notifSukses').style.display = 'none';
+  }
+
+  // Tutup notif jika klik di luar kotak putih
+  window.onclick = function(event) {
+    if (event.target == document.getElementById('notifSukses')) {
+        tutupNotif();
+    }
+  }
+</script>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</body>
+</html>

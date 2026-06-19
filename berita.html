@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita - SidaKangen</title>
+    
+    <!-- Memastikan file CSS terpanggil -->
+    <link rel="stylesheet" href="assets/css/style.css">
+    
+    <!-- Tambahan Style Khusus Berita agar tetap rapi -->
+    <style>
+        .berita-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        .berita-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+            transition: 0.3s;
+            border: none;
+        }
+        .berita-card:hover {
+            transform: translateY(-8px);
+        }
+        .berita-card img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+        }
+        .berita-content {
+            padding: 25px;
+        }
+        .berita-content h3 {
+            color: #0f766e;
+            margin-bottom: 12px;
+            font-size: 22px;
+            font-weight: 600;
+            text-align: left; /* Judul tetap rata kiri agar profesional */
+        }
+        .berita-content p {
+            color: #555;
+            line-height: 1.7;
+            font-size: 15px;
+            margin-bottom: 15px;
+            text-align: justify; /* Membuat teks berita rata kanan-kiri */
+            text-justify: inter-word; /* Membuat pembagian spasi lebih halus */
+        }
+        .berita-date {
+            display: inline-block;
+            background: #eefaf7;
+            color: #0f766e;
+            padding: 6px 15px;
+            border-radius: 12px;
+            font-size: 13px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+    <aside class="sidebar">
+        <h2>SidaKangen</h2>
+        <ul>
+            <li><a href="index.html">Beranda</a></li>
+            <li><a href="profil-desa.html">Profil Desa</a></li>
+            <li><a href="statistik.html">Statistik</a></li>
+            <li><a href="pemerintahan.html">Pemerintahan</a></li>
+            <li><a href="layanan.html">Layanan</a></li>
+            <li><a href="berita.html">Berita</a></li>
+            <li><a href="galeri.html">Galeri</a></li> <!-- Pastikan file ini ada -->
+            <li><a href="potensi.html">Potensi</a></li>
+            <li><a href="kontak.html">Kontak</a></li>
+        </ul>
+    </aside>
+
+    <main class="main">
+        <h1 class="title">Berita Desa</h1>
+
+        <div class="berita-grid">
+            <!-- BERITA 1 -->
+            <div class="berita-card">
+                <img src="assets/img/pembagian bantuan pangan.png" alt="Statistik Pekerjaan">
+                <div class="berita-content">
+                    <h3>Pembagian Bantuan Pangan</h3>
+                    <p>Penyaluran Bantuan Pangan dari Bulog kepada masyarakat yang membutuhkan di Desa Sidakangen Selasa 28 April 2026 kepada 
+                      331 KPM (Keluarga Penerima Manfaat). Bantuan berupa beras sejumlah 10 kg dan minyak sejumlah 2 liter. Bantuan periode bulan 
+                      ini adalah alokasi untuk 2 bulan yaitu Februari dan Maret, jadi setiap KPM menerima beras 20 kg dan minyak 4 Liter. 
+                      Pembagian dilaksanakan di Halaman Kantor Balai  Desa Sidakangen mulai pukul 08.00 WIB s/d 15.30 WIB.</p>
+                    <span class="berita-date">26 April 2026</span>
+                </div>
+            </div>
+
+            <!-- BERITA 2 -->
+            <div class="berita-card">
+                <img src="assets/img/pembagian bibit padi gratis.png" alt="Grafik Penduduk">
+                <div class="berita-content">
+                    <h3>Pembagian Bibit Padi Gratis</h3>
+                    <p>Rabu, 29 April 2026 dilaksanakan pembagian bibit padi gratis dari Pemdes Sidakangen untuk 2 Kelompok tani. 
+                      Total sejumlah 250 Kantong bibit Padi 5kg Inpari 32 Premium.
+                       Bantuan ini bersumber dari Dana Desa Tahun 2026 dengan anggaran semula Rp 30.000.000,- dengan realisasi Rp 25.312.500,-. Per 100 ubin garapan sawah mendapat 3kg bantuan bibit.</p>
+                    <span class="berita-date">29 April 2026</span>
+                </div>
+            </div>
+
+            <!-- BERITA 3 -->
+            <div class="berita-card">
+                <img src="assets/img/musyawarha dusun I bulan april 2026.png" alt="Pelayanan Desa">
+                <div class="berita-content">
+                    <h3>Musyawarah Dusun I</h3>
+                    <p>Musyawarah Dusun I bulan April 2026 bertempat di Mushola At Taqwa RT 08 RW 04. 
+                      Pada pertemuan kali ini, musdus dihadiri oleh Bapak Wagimin selaku Kepala Desa Sidakangen, perangkat desa, Ketua RT, RW, BPD, dan Tokoh masyarakat yang berada di wilayah Dusun I. 
+                      Acara dimulai dengan Tausiah dari tuan rumah ketua RW 04 Bapak Haji Sutikno. Dilanjutkan dengan sambutan dari Kepala Desa, kemudian dilanjutkan penyampaian Informasi oleh Kasi Pemerintahan berupa perubahan pelayanan permohonan SKCK dan pelaksanaan Ground Checking petugas Dinsos terkait PBI JKN KIS. 
+                      Dalam pertemuan kali ini ada tambahan kegiatan yaitu penyerahan SK Ketua RT 11 yang baru yaitu Bapak Winarko, SK Ketua RT langsung diserahkan oleh beliau bapak Kepala Desa.</p>
+                    <span class="berita-date">21 April 2026</span>
+                </div>
+            </div>
+            <!-- BERITA 4 -->
+            <div class="berita-card">
+                <img src="assets/img/rapat rutin Linmas.png" alt="Pelayanan Desa">
+                <div class="berita-content">
+                    <h3>Rapat Rutin Limnas Desa Sidakangen</h3>
+                    <p>Linmas Desa Sidakangen rutin melaksanakan pertemuan setiap bulannya di tanggal 15. 
+                      pada bulan ini April 2026, pertemuan rutin yang dilaksanakan di halaman Balai Desa Sidakangen dipimpin oleh Bapak Anggit Widodo, S. Pd selaku kasi Pemerintahan sekaligus Danton Linmas Desa Sidakangen. 
+                      Pertemuan rutinan ini dimaksudkan untuk meningkatkan rasa kekeluargaan sesama anggota Linmas dan sharing informasi dari Pemdes yang diwakili Kasi Pemerintahan.
+                       Linmas yang beranggotakan total 20 orang terdiri dari 19 laki-laki dan 1 perempuan. Hal yang selalu disampaikan adalah tentang pentingnya peran serta Linmas dalam menjaga keamanan di Desa serta selalu waspada terhadap kondisi alam dengan cuaca yang sedang tidak baik-baik saja.
+                        Tingginya curah hujan akhir-akhir ini mengakibatkan Sungai di wilayah desa Sidakangen sering meluap. Kewaspadaan dini dan cepatnya informasi menjadi titik penting agar apabila terjadi hal yang tidak diinginkan misalnya Banjir atau pohon tumbang dapat langsung segera ditindaklanjuti.</p>
+                    <span class="berita-date">15 April 2026</span>
+        </div>
+            </div>
+            <!-- BERITA 5 -->
+            <div class="berita-card">
+                <img src="assets/img/Pemilihan ketua RT.png" alt="Pelayanan Desa">
+                <div class="berita-content">
+                    <h3>Pemilihan Ketua RT</h3>
+                    <p>Rabu, 15 April 2026 Pukul 20.00 WIB dilaksanakan pemilihan Ketua RT 11 RW 05 Desa Sidakangen. 
+                      Pemilihan ini dilaksanakan karena ketua RT sebelumnya mengundurkan diri dari jabatannya dikarenakan kesibukan pekerjaan beliau. 
+                      Pak Agus Danil Hidayat telah mengabdi menjadi Ketua RT 11 selama kurang lebih 5 tahun. Pemdes Sidakangen yang diwakili oleh Pak Anggit Widodo, S. Pd selaku Kasi Pemerintahan dan Pak Jurohman selaku Kasi pelayanan mengucapkan banyak terimaksih kepada Pak Agus Danil Hidayat atas pengabdiannya selama menjadi Ketua RT. 
+                      Proses pemilihan ketua RT dilaksanakan secara demokratis, ada 3 kandidat utama yang dicalonkan oleh warga yaitu Pak Winarko, Pak Bontot, dan Feri. Berdasarkan hasil perolehan suara, ditetapkan sebagai ketua RT 11 terpilih adalah beliau Pak Winarko dengan perolehan 14 suara, Pak Bontot mendapatkan 13 suara, sedangkan Pak Feri mendapat 8 suara. 
+                      Pemdes Sidakangen yang diwakili oleh Bapak Jurohman mengucapkan selamat atas terpilihnya saudara WInarko menjadi ketua RT 11 dan selamat bekerjasama dengan Pemdes, semoga dengan terpilihnya ketua RT yang baru bisa semakin meningkatkan keharmonisan warga utamanya di wilayah RT 11.</p>
+                    <span class="berita-date">15 April 2026</span>
+                </div>
+            </div>
+            <!-- BERITA 6 -->
+            <div class="berita-card">
+                <img src="assets/img/Kas opname.png" alt="Grafik Penduduk">
+                <div class="berita-content">
+                  <h3>Pembagian Bibit Padi Gratis</h3>
+                    <p>Hari ini, 15 April 2026 Tim Kas Opname Kecamatan Kalimanah melaksanakan pembinaan Administrasi di Desa Sidakangen. Rombongan tim yang dipimpin langsung oleh beliau bapak Camat Kalimanah, Bapak Panggih Adi Susilo, S. H beserta jajarannya Bapak Sekcam Suharsono, S. H dan Kaur Kasi Kecamatan Kalimanah beserta Pendamping Desa. 
+                      Kegiatan rutin triwulan yang dilaksanakan oleh Kecamatan Kalimanah bertujuan untuk memonitoring kegiatan-kegiatan yang dilaksanakan oleh desa beserta pengadministrasiannya. Pada kesempatan ini, Tim kecamatan tidak hanya mengecek administrasi tetapi juga perkenalan Camat dan Sekcam Kalimanah yang baru.  
+                      Berdasarkan hasil monitoring, alhamdulillah untuk administrasi dinyatakan sudah baik, meskipun ada beberapa hal yang perlu ditingkatkan dan dilengkapi oleh kaur dan kasi desa Sidakangen. Bapak Kepala Desa Sidakangen beliau Bapak Wagimin mengucapkan terimakasih kepada Tim Kecamatan dan berjanji akan meningkatkan kinerja dari Pemdes Sidakangen dan melengkapi apa kekurangan yang sudah disampaikan. 
+                      Kegiatan ini berjalan dengan lancar dan ceria karena beliau Pak Panggih selaku Camat Kalimanah adalah sosok yang tegas dan humoris.</p>
+                    <span class="berita-date">15 April 2026</span>
+                </div>
+            </div>
+            <!-- BERITA 7 -->
+            <div class="berita-card">
+                <img src="assets/img/kerja bakti limnas.png" alt="Grafik Penduduk">
+                <div class="berita-content">
+                  <h3>Kerja Bhakti Linmas</h3>
+                    <p>Hari Minggu, 13 April 2026, suasana di Jembatan Merah, Sidakangen, berubah menjadi arena kerja bhakti besar-besaran. 
+                      Sungai Ponggawa, yang biasanya mengalir tenang, kini dipenuhi sampah dan kayu-kayu besar yang terbawa banjir. Tim Linmas, Pemdes Sidakangen, dan warga sekitar bergotong-royong membersihkan sungai yang sudah mulai mengganggu aktivitas warga.Dengan semangat gotong-royong, mereka bekerja sama mengangkat sampah dan kayu-kayu yang tersangkut di bawah jembatan. 
+                      "Ayo, kita kerja sama-sama!" seru salah satu warga sambil mengangkat sepotong kayu besar. Pemdes Sidakangen juga turun langsung, membantu mengorganisir dan mengarahkan kerja bhakti ini.
+                      Warga sekitar yang ikut serta tak hanya membersihkan sungai, tapi juga berbagi cerita dan canda tawa. "Sungai kita harus bersih lagi!" kata salah satu warga dengan senyum. Kerja bhakti ini diharapkan bisa mengembalikan kebersihan dan kelancaran aliran Sungai Ponggawa.</p>
+                    <span class="berita-date">13 April 2026</span>
+                </div>
+            </div>
+    </main>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+</body>
+</html>
