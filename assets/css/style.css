@@ -679,98 +679,22 @@ table td{
 
 /* RESPONSIVE */
 
-@media(max-width:1200px){
-
-  .stats{
-    grid-template-columns:repeat(2,1fr);
-  }
-
-}
-
-@media(max-width:900px){
-
-  .contact-container{
-    grid-template-columns:1fr;
-  }
-
-  .statistik-grid{
-    grid-template-columns:1fr;
-  }
-
-}
-
-@media(max-width:768px){
-
-  .sidebar{
-    width:100%;
-    height:auto;
-    position:relative;
-
-    border-radius:0;
-  }
-
-  .main{
-    margin-left:0;
-    padding:20px;
-  }
-
-  .hero{
-    height:auto;
-    padding:35px 25px;
-  }
-
-  .overlay h1{
-    font-size:40px;
-  }
-
-  .overlay p{
-    font-size:16px;
-  }
-
-  .search-box{
-    flex-direction:column;
-
-    width:100%;
-  }
-
-  .search-box input{
-    width:100%;
-  }
-
-  .hero-mini-stats{
-    flex-direction:column;
-  }
-
-  .stats{
-    grid-template-columns:1fr;
-  }
-
-  .gallery{
-    grid-template-columns:1fr;
-  }
-}
-.berita-content p {
-            color: #555;
-            line-height: 1.7;
-            font-size: 15px;
-            margin-bottom: 15px;
-            text-align: justify; /* TAMBAHKAN INI */
-            text-justify: inter-word; /* Opsional: Agar spasi antar kata lebih rapi */
-        }
-        /* Google Fonts untuk tampilan lebih modern */
+/* ==========================================
+   1. BASE STYLE (Gaya Dasar Desktop)
+   ========================================== */
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap');
 
 body {
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    display: flex;
-    background-color: #f4fdfb; /* Warna background sangat muda agar fresh */
+    display: flex; /* Ini yang buat sidebar di samping */
+    background-color: #f4fdfb;
 }
 
-/* Sidebar Styling */
+/* Sidebar Dasar */
 .sidebar {
     width: 250px;
-    background-color: #0d9488; /* Warna Teal Desa */
+    background-color: #0d9488;
     color: white;
     min-height: 100vh;
     padding: 20px;
@@ -799,10 +723,10 @@ body {
 
 .sidebar ul li a:hover, .sidebar ul li a.active {
     background-color: rgba(255, 255, 255, 0.2);
-    padding-left: 25px; /* Efek geser saat hover */
+    padding-left: 25px;
 }
 
-/* Main Content */
+/* Main Content Dasar */
 .main {
     flex: 1;
     padding: 40px;
@@ -826,10 +750,9 @@ body {
     border-radius: 2px;
 }
 
-/* Gallery Grid System */
 .gallery {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); /* Responsif otomatis */
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-top: 20px;
 }
@@ -844,16 +767,98 @@ body {
 .gallery-item img {
     width: 100%;
     height: 250px;
-    object-fit: cover; /* Agar gambar tidak gepeng */
+    object-fit: cover;
     display: block;
-    transition: transform 0.5s ease;
 }
 
-/* Hover Effects */
-.gallery-item:hover {
-    transform: translateY(-5px); /* Terangkat sedikit */
+.berita-content p {
+    color: #555;
+    line-height: 1.7;
+    font-size: 15px;
+    margin-bottom: 15px;
+    text-align: justify;
 }
 
-.gallery-item:hover img {
-    transform: scale(1.1); /* Zoom halus pada gambar */
+/* ==========================================
+   2. MEDIA QUERIES (KHUSUS HP - TARUH DI BAWAH)
+   ========================================== */
+
+@media(max-width: 1200px){
+  .stats { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width: 900px){
+  .contact-container, .statistik-grid { grid-template-columns: 1fr; }
+}
+
+@media(max-width: 768px){
+  /* KUNCI PERBAIKAN: Ubah flex menjadi kolom */
+  body {
+    flex-direction: column; 
+  }
+
+  .sidebar {
+    width: 100%;    /* Lebar penuh di HP */
+    min-height: auto;
+    position: relative;
+    border-radius: 0;
+    padding: 15px;
+  }
+
+  /* Agar menu tidak terlalu panjang ke bawah, buat berjejer sedikit */
+  .sidebar ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 5px;
+  }
+
+  .sidebar ul li a {
+    padding: 8px 12px;
+    font-size: 13px;
+  }
+
+  .main {
+    margin-left: 0; /* Pastikan tidak ada jarak kiri */
+    padding: 20px;
+    width: 100%;
+  }
+
+  .hero {
+    height: auto;
+    padding: 30px 15px;
+    text-align: center;
+  }
+
+  .overlay h1 {
+    font-size: 28px; /* 40px kegedean buat HP, kita turunkan ke 28px */
+  }
+
+  .overlay p {
+    font-size: 14px;
+  }
+
+  .search-box {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .search-box input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  /* Semua Grid jadi 1 kolom di HP */
+  .stats, .gallery {
+    grid-template-columns: 1fr;
+  }
+
+  .title {
+    font-size: 24px;
+    display: block;
+    text-align: center;
+  }
+  .title::after {
+    left: 25%; /* Garis bawah judul ke tengah */
+  }
 }
