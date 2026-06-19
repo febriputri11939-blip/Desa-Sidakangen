@@ -862,3 +862,73 @@ body {
     left: 25%; /* Garis bawah judul ke tengah */
   }
 }
+/* RESPONSIVE MOBILE */
+@media screen and (max-width: 768px) {
+
+  body{
+    display:block;
+  }
+
+  .sidebar{
+    position: relative;
+    width: 100%;
+    height: auto;
+    min-height: auto;
+    border-radius: 0;
+    padding: 20px;
+  }
+
+  .main{
+    margin-left: 0 !important;
+    width: 100%;
+    padding: 15px;
+  }
+
+  .sidebar ul{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:center;
+    gap:10px;
+  }
+
+  .hero{
+    height:auto;
+    padding:25px 15px;
+  }
+
+  .overlay h1{
+    font-size:30px;
+  }
+
+  .overlay p{
+    font-size:14px;
+  }
+
+  .search-box{
+    width:100%;
+    flex-direction:column;
+  }
+
+  .search-box input{
+    width:100%;
+  }
+
+  .hero-mini-stats,
+  .stats,
+  .gallery,
+  .contact-container,
+  .statistik-grid{
+    display:grid;
+    grid-template-columns:1fr !important;
+  }
+
+  table{
+    display:block;
+    overflow-x:auto;
+  }
+
+  img{
+    max-width:100%;
+    height:auto;
+  }
+}
