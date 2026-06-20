@@ -46,6 +46,16 @@ body {
   /* Scroll jika menu melebihi layar */
   overflow-y: auto;
 }
+.sidebar-logo {
+  display: block;
+  width: 90px;
+  height: 90px;
+  object-fit: contain;
+  border-radius: 50%;
+  margin: 0 auto 15px auto;
+  background: rgba(255, 255, 255, 0.15);
+  padding: 8px;
+}
 
 .sidebar h2 {
   color: #ffffff !important;
@@ -517,6 +527,13 @@ table td {
     display: flex;
     flex-direction: column;
   }
+  @media (max-width: 768px) {
+  .sidebar-logo {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+  }
+}
 
   /* Sidebar pindah ke atas, lebar penuh, tinggi otomatis */
   .sidebar {
@@ -535,6 +552,24 @@ table td {
     margin-bottom: 15px;
     padding-bottom: 10px;
   }
+  .sidebar-logo {
+    display: block;
+    width: 90px;
+    height: 90px;
+    object-fit: contain;
+    border-radius: 50%;
+    margin: 0 auto 15px auto;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px;
+}
+
+@media (max-width: 768px) {
+    .sidebar-logo {
+        width: 50px;
+        height: 50px;
+        margin-bottom: 8px;
+    }
+}
 
   /* Menu berjejer horizontal, bisa wrap */
   .sidebar ul {
