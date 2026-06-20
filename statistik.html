@@ -5,64 +5,70 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <title>Statistik</title>
 
 <link rel="stylesheet" href="assets/css/style.css">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-</head>
+
 <style>
 
-/* TAMBAHAN GRAFIK BUNDER */
-
-.circle-chart{
-  width:220px;
-  height:220px;
-  border-radius:50%;
-  margin:20px auto;
-  position:relative;
+.bar-chart-wrapper {
+  width: 100%;
 }
 
-.circle-chart::before{
-  content:'';
-  position:absolute;
-  width:120px;
-  height:120px;
-  background:white;
-  border-radius:50%;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
+.bar-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
 }
 
-.chart-center{
-  position:absolute;
-  top:50%;
-  left:50%;
-  transform:translate(-50%,-50%);
-  text-align:center;
-  z-index:2;
+.bar-label {
+  font-size: 13px;
+  color: #444;
+  width: 170px;
+  flex-shrink: 0;
 }
 
-.chart-center h2{
-  color:#198754;
-  font-size:28px;
+.bar-track {
+  flex: 1;
+  background: #f0f0f0;
+  border-radius: 6px;
+  height: 30px;
+  overflow: hidden;
 }
 
-.chart-center p{
-  font-size:13px;
-  color:#777;
+.bar-fill {
+  height: 100%;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  padding-left: 10px;
+  box-sizing: border-box;
+  min-width: 36px;
 }
 
-.stats{
-  align-items:flex-start;
+.bar-fill span {
+  font-size: 12px;
+  font-weight: 600;
+  color: #fff;
+  white-space: nowrap;
+}
+
+.bar-number {
+  font-size: 13px;
+  font-weight: 600;
+  color: #333;
+  width: 40px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.stats {
+  align-items: flex-start;
 }
 
 </style>
@@ -73,9 +79,6 @@
 
 <div class="container">
 
-<!-- SIDEBAR -->
-
-<!-- SIDEBAR -->
 <aside class="sidebar">
     <img src="assets/img/logo sidkangen.png" class="sidebar-logo" alt="Logo Desa SidaKangen">
     <h2>SidaKangen</h2>
@@ -92,518 +95,314 @@
     </ul>
 </aside>
 
-<!-- MAIN -->
-
 <main class="main">
-
-<!-- HEADER -->
 
 <h1 class="title">Statistik Penduduk</h1>
 
-<!-- CARD STATISTIK -->
-
 <div class="stats-wrapper">
-
-<div class="stats">
-
-<div class="card">
-
-<h3>👨 Jumlah Penduduk</h3>
-
-<p class="stat-number">2.616</p>
-
-<br>
-
-<small>Total warga desa</small>
-
+  <div class="stats">
+    <div class="card">
+      <h3>👨 Jumlah Penduduk</h3>
+      <p class="stat-number">2.616</p><br>
+      <small>Total warga desa</small>
+    </div>
+    <div class="card">
+      <h3>👨‍👩‍👧 Kepala Keluarga</h3>
+      <p class="stat-number">856</p><br>
+      <small>Total KK</small>
+    </div>
+    <div class="card">
+      <h3>👨 Laki-laki</h3>
+      <p class="stat-number">1.320</p><br>
+      <small>Penduduk pria</small>
+    </div>
+    <div class="card">
+      <h3>👩 Perempuan</h3>
+      <p class="stat-number">1.296</p><br>
+      <small>Penduduk wanita</small>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-
-<h3>👨‍👩‍👧 Kepala Keluarga</h3>
-
-<p class="stat-number">856</p>
-
-<br>
-
-<small>Total KK</small>
-
-</div>
-
-<div class="card">
-
-<h3>👨 Laki-laki</h3>
-
-<p class="stat-number">1.320</p>
-
-<br>
-
-<small>Penduduk pria</small>
-
-</div>
-
-<div class="card">
-
-<h3>👩 Perempuan</h3>
-
-<p class="stat-number">1.296</p>
-
-<br>
-
-<small>Penduduk wanita</small>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- STATISTIK USIA -->
 
 <h1 class="title">Statistik Usia</h1>
 
 <div class="stats usia-grid">
-
-<div class="card">
-<div class="chart-item">
-
-<div class="chart-info">
-<span>0 - 14 Tahun</span>
-<span>356</span>
+  <div class="card">
+    <div class="chart-item">
+      <div class="chart-info"><span>0 - 14 Tahun</span><span>356</span></div>
+      <div class="bar"><div class="fill" style="width:14%; background:#198754;"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="chart-item">
+      <div class="chart-info"><span>15 - 24 Tahun</span><span>394</span></div>
+      <div class="bar"><div class="fill" style="width:15%; background:#1aa7a1;"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="chart-item">
+      <div class="chart-info"><span>25 - 39 Tahun</span><span>573</span></div>
+      <div class="bar"><div class="fill" style="width:22%; background:#20c997;"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="chart-item">
+      <div class="chart-info"><span>40 - 54 Tahun</span><span>640</span></div>
+      <div class="bar"><div class="fill" style="width:24%; background:#0ea5e9;"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="chart-item">
+      <div class="chart-info"><span>55 - 69 Tahun</span><span>422</span></div>
+      <div class="bar"><div class="fill" style="width:16%; background:#38bdf8;"></div></div>
+    </div>
+  </div>
+  <div class="card">
+    <div class="chart-item">
+      <div class="chart-info"><span>70+ Tahun</span><span>231</span></div>
+      <div class="bar"><div class="fill" style="width:9%; background:#67e8f9;"></div></div>
+    </div>
+  </div>
 </div>
-
-<div class="bar">
-<div class="fill" style="width:14%; background:#198754;"></div>
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<div class="chart-item">
-
-<div class="chart-info">
-<span>15 - 24 Tahun</span>
-<span>394</span>
-</div>
-
-<div class="bar">
-<div class="fill" style="width:15%; background:#1aa7a1;"></div>
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<div class="chart-item">
-
-<div class="chart-info">
-<span>25 - 39 Tahun</span>
-<span>573</span>
-</div>
-
-<div class="bar">
-<div class="fill" style="width:22%; background:#20c997;"></div>
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<div class="chart-item">
-
-<div class="chart-info">
-<span>40 - 54 Tahun</span>
-<span>640</span>
-</div>
-
-<div class="bar">
-<div class="fill" style="width:24%; background:#0ea5e9;"></div>
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<div class="chart-item">
-
-<div class="chart-info">
-<span>55 - 69 Tahun</span>
-<span>422</span>
-</div>
-
-<div class="bar">
-<div class="fill" style="width:16%; background:#38bdf8;"></div>
-</div>
-
-</div>
-</div>
-
-<div class="card">
-<div class="chart-item">
-
-<div class="chart-info">
-<span>70+ Tahun</span>
-<span>231</span>
-</div>
-
-<div class="bar">
-<div class="fill" style="width:9%; background:#67e8f9;"></div>
-</div>
-
-</div>
-</div>
-
-</div>
-
-<!-- DATA PENDIDIKAN -->
 
 <h1 class="title">Data Pendidikan</h1>
 
 <div class="stats">
+  <div class="card">
+    <table>
+      <tr><th>Pendidikan</th><th>Jumlah</th></tr>
+      <tr><td>Tidak / Belum Sekolah</td><td>313</td></tr>
+      <tr><td>Tidak Tamat SD</td><td>568</td></tr>
+      <tr><td>Tamat SD</td><td>568</td></tr>
+      <tr><td>SLTP / Sederajat</td><td>581</td></tr>
+      <tr><td>SLTA / Sederajat</td><td>679</td></tr>
+      <tr><td>Diploma I / II</td><td>6</td></tr>
+      <tr><td>Akademi / Diploma III / S. Muda</td><td>32</td></tr>
+      <tr><td>Diploma IV / Strata I</td><td>118</td></tr>
+      <tr><td>Strata II</td><td>5</td></tr>
+    </table>
+  </div>
 
-<div class="card">
-
-<table>
-
-<tr>
-<th>Pendidikan</th>
-<th>Jumlah</th>
-</tr>
-
-<tr>
-<td>Tidak / Belum Sekolah</td>
-<td>313</td>
-</tr>
-
-<tr>
-<td>Tidak Tamat SD</td>
-<td>568</td>
-</tr>
-
-<tr>
-<td>Tamat SD</td>
-<td>568</td>
-</tr>
-
-<tr>
-<td>SLTP / Sederajat</td>
-<td>581</td>
-</tr>
-
-<tr>
-<td>SLTA / Sederajat</td>
-<td>679</td>
-</tr>
-
-<tr>
-<td>Diploma I / II</td>
-<td>6</td>
-</tr>
-
-<tr>
-<td>Akademi / Diploma III / S. Muda</td>
-<td>32</td>
-</tr>
-
-<tr>
-<td>Diploma IV / Strata I</td>
-<td>118</td>
-</tr>
-
-<tr>
-<td>Strata II</td>
-<td>5</td>
-</tr>
-
-</table>
-
+  <div class="card">
+    <h3>Grafik Pendidikan</h3><br>
+    <div class="bar-chart-wrapper">
+      <div class="bar-row">
+        <span class="bar-label">SLTA / Sederajat</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#198754;"><span>679</span></div></div>
+        <span class="bar-number">679</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">SLTP / Sederajat</span>
+        <div class="bar-track"><div class="bar-fill" style="width:85.6%;background:#1aa7a1;"><span>581</span></div></div>
+        <span class="bar-number">581</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Tidak Tamat SD</span>
+        <div class="bar-track"><div class="bar-fill" style="width:83.7%;background:#20c997;"><span>568</span></div></div>
+        <span class="bar-number">568</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Tamat SD</span>
+        <div class="bar-track"><div class="bar-fill" style="width:83.7%;background:#0ea5e9;"><span>568</span></div></div>
+        <span class="bar-number">568</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Belum Sekolah</span>
+        <div class="bar-track"><div class="bar-fill" style="width:46.1%;background:#38bdf8;"><span>313</span></div></div>
+        <span class="bar-number">313</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Diploma IV / S1</span>
+        <div class="bar-track"><div class="bar-fill" style="width:17.4%;background:#67e8f9;"><span style="color:#065f46">118</span></div></div>
+        <span class="bar-number">118</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Diploma III</span>
+        <div class="bar-track"><div class="bar-fill" style="width:4.7%;background:#a7f3d0;"></div></div>
+        <span class="bar-number">32</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Diploma I / II</span>
+        <div class="bar-track"><div class="bar-fill" style="width:0.9%;background:#d1fae5;"></div></div>
+        <span class="bar-number">6</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Strata II</span>
+        <div class="bar-track"><div class="bar-fill" style="width:0.7%;background:#d1fae5;"></div></div>
+        <span class="bar-number">5</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-
-<h3>Grafik Pendidikan</h3>
-
-<div class="circle-chart"
-style="background:
-conic-gradient(
-#198754 0% 20%,
-#1aa7a1 20% 40%,
-#20c997 40% 60%,
-#0ea5e9 60% 100%
-);">
-
-<div class="chart-center">
-<h2>679</h2>
-<p>SLTA Terbanyak</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- RENTANG UMUR -->
 
 <h1 class="title">Rentang Umur</h1>
 
 <div class="stats">
+  <div class="card">
+    <table>
+      <tr><th>Rentang Umur</th><th>Jumlah</th></tr>
+      <tr><td>0 - 14 Tahun</td><td>356</td></tr>
+      <tr><td>15 - 24 Tahun</td><td>394</td></tr>
+      <tr><td>25 - 39 Tahun</td><td>573</td></tr>
+      <tr><td>40 - 54 Tahun</td><td>640</td></tr>
+      <tr><td>55 - 69 Tahun</td><td>422</td></tr>
+      <tr><td>70+ Tahun</td><td>231</td></tr>
+    </table>
+  </div>
 
-<div class="card">
-
-<table>
-
-<tr>
-<th>Rentang Umur</th>
-<th>Jumlah</th>
-</tr>
-
-<tr>
-<td>0 - 14 Tahun</td>
-<td>356</td>
-</tr>
-
-<tr>
-<td>15 - 24 Tahun</td>
-<td>394</td>
-</tr>
-
-<tr>
-<td>25 - 39 Tahun</td>
-<td>573</td>
-</tr>
-
-<tr>
-<td>40 - 54 Tahun</td>
-<td>640</td>
-</tr>
-
-<tr>
-<td>55 - 69 Tahun</td>
-<td>422</td>
-</tr>
-
-<tr>
-<td>70+ Tahun</td>
-<td>231</td>
-</tr>
-
-</table>
-
+  <div class="card">
+    <h3>Grafik Rentang Umur</h3><br>
+    <div class="bar-chart-wrapper">
+      <div class="bar-row">
+        <span class="bar-label">40 – 54 Tahun</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#0ea5e9;"><span>640</span></div></div>
+        <span class="bar-number">640</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">25 – 39 Tahun</span>
+        <div class="bar-track"><div class="bar-fill" style="width:89.5%;background:#198754;"><span>573</span></div></div>
+        <span class="bar-number">573</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">55 – 69 Tahun</span>
+        <div class="bar-track"><div class="bar-fill" style="width:65.9%;background:#1aa7a1;"><span>422</span></div></div>
+        <span class="bar-number">422</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">15 – 24 Tahun</span>
+        <div class="bar-track"><div class="bar-fill" style="width:61.6%;background:#20c997;"><span>394</span></div></div>
+        <span class="bar-number">394</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">0 – 14 Tahun</span>
+        <div class="bar-track"><div class="bar-fill" style="width:55.6%;background:#38bdf8;"><span>356</span></div></div>
+        <span class="bar-number">356</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">70+ Tahun</span>
+        <div class="bar-track"><div class="bar-fill" style="width:36.1%;background:#67e8f9;"><span style="color:#065f46">231</span></div></div>
+        <span class="bar-number">231</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-
-<h3>Grafik Rentang Umur</h3>
-
-<div class="circle-chart"
-style="background:
-conic-gradient(
-#198754 0% 14%,
-#1aa7a1 14% 29%,
-#20c997 29% 51%,
-#0ea5e9 51% 75%,
-#38bdf8 75% 91%,
-#67e8f9 91% 100%
-);">
-
-<div class="chart-center">
-<h2>640</h2>
-<p>Usia Dominan</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PEKERJAAN -->
 
 <h1 class="title">Pekerjaan</h1>
 
 <div class="stats">
+  <div class="card">
+    <table>
+      <tr><th>Pekerjaan</th><th>Jumlah</th></tr>
+      <tr><td>Petani</td><td>685</td></tr>
+      <tr><td>Buruh Harian Lepas</td><td>412</td></tr>
+      <tr><td>Wiraswasta</td><td>286</td></tr>
+      <tr><td>Pelajar / Mahasiswa</td><td>523</td></tr>
+      <tr><td>Ibu Rumah Tangga</td><td>340</td></tr>
+      <tr><td>PNS</td><td>24</td></tr>
+      <tr><td>Tidak Bekerja</td><td>346</td></tr>
+    </table>
+  </div>
 
-<div class="card">
-
-<table>
-
-<tr>
-<th>Pekerjaan</th>
-<th>Jumlah</th>
-</tr>
-
-<tr>
-<td>Petani</td>
-<td>685</td>
-</tr>
-
-<tr>
-<td>Buruh Harian Lepas</td>
-<td>412</td>
-</tr>
-
-<tr>
-<td>Wiraswasta</td>
-<td>286</td>
-</tr>
-
-<tr>
-<td>Pelajar / Mahasiswa</td>
-<td>523</td>
-</tr>
-
-<tr>
-<td>Ibu Rumah Tangga</td>
-<td>340</td>
-</tr>
-
-<tr>
-<td>PNS</td>
-<td>24</td>
-</tr>
-
-<tr>
-<td>Tidak Bekerja</td>
-<td>346</td>
-</tr>
-
-</table>
-
+  <div class="card">
+    <h3>Grafik Pekerjaan</h3><br>
+    <div class="bar-chart-wrapper">
+      <div class="bar-row">
+        <span class="bar-label">Petani</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#198754;"><span>685</span></div></div>
+        <span class="bar-number">685</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Pelajar / Mahasiswa</span>
+        <div class="bar-track"><div class="bar-fill" style="width:76.4%;background:#1aa7a1;"><span>523</span></div></div>
+        <span class="bar-number">523</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Buruh Harian Lepas</span>
+        <div class="bar-track"><div class="bar-fill" style="width:60.1%;background:#20c997;"><span>412</span></div></div>
+        <span class="bar-number">412</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Tidak Bekerja</span>
+        <div class="bar-track"><div class="bar-fill" style="width:50.5%;background:#0ea5e9;"><span>346</span></div></div>
+        <span class="bar-number">346</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Ibu Rumah Tangga</span>
+        <div class="bar-track"><div class="bar-fill" style="width:49.6%;background:#38bdf8;"><span>340</span></div></div>
+        <span class="bar-number">340</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Wiraswasta</span>
+        <div class="bar-track"><div class="bar-fill" style="width:41.8%;background:#67e8f9;"><span style="color:#065f46">286</span></div></div>
+        <span class="bar-number">286</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">PNS</span>
+        <div class="bar-track"><div class="bar-fill" style="width:3.5%;background:#d1fae5;"></div></div>
+        <span class="bar-number">24</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-
-<h3>Grafik Pekerjaan</h3>
-
-<div class="circle-chart"
-style="background:
-conic-gradient(
-#198754 0% 35%,
-#1aa7a1 35% 55%,
-#20c997 55% 70%,
-#0ea5e9 70% 90%,
-#67e8f9 90% 100%
-);">
-
-<div class="chart-center">
-<h2>685</h2>
-<p>Petani</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- JENIS KELAMIN -->
 
 <h1 class="title">Jenis Kelamin</h1>
 
 <div class="stats">
+  <div class="card">
+    <table>
+      <tr><th>Jenis Kelamin</th><th>Jumlah</th></tr>
+      <tr><td>Laki-laki</td><td>1320</td></tr>
+      <tr><td>Perempuan</td><td>1296</td></tr>
+    </table>
+  </div>
 
-<div class="card">
-
-<table>
-
-<tr>
-<th>Jenis Kelamin</th>
-<th>Jumlah</th>
-</tr>
-
-<tr>
-<td>Laki-laki</td>
-<td>1320</td>
-</tr>
-
-<tr>
-<td>Perempuan</td>
-<td>1296</td>
-</tr>
-
-</table>
-
+  <div class="card">
+    <h3>Grafik Jenis Kelamin</h3><br>
+    <div class="bar-chart-wrapper">
+      <div class="bar-row">
+        <span class="bar-label">Laki-laki</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#198754;"><span>1.320</span></div></div>
+        <span class="bar-number">1.320</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Perempuan</span>
+        <div class="bar-track"><div class="bar-fill" style="width:98.2%;background:#1aa7a1;"><span>1.296</span></div></div>
+        <span class="bar-number">1.296</span>
+      </div>
+    </div>
+  </div>
 </div>
-
-<div class="card">
-
-<h3>Grafik Jenis Kelamin</h3>
-
-<div class="circle-chart"
-style="background:
-conic-gradient(
-#198754 0% 50.46%,
-#1aa7a1 50.46% 100%
-);">
-
-<div class="chart-center">
-<h2>2616</h2>
-<p>Total Penduduk</p>
-</div>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- KEPEMILIKAN KIA -->
 
 <h1 class="title">Kepemilikan KIA</h1>
 
 <div class="stats">
+  <div class="card">
+    <table>
+      <tr><th>Status KIA</th><th>Jumlah</th></tr>
+      <tr><td>Memiliki KIA</td><td>428</td></tr>
+      <tr><td>Belum Memiliki KIA</td><td>215</td></tr>
+    </table>
+  </div>
 
-<div class="card">
-
-<table>
-
-<tr>
-<th>Status KIA</th>
-<th>Jumlah</th>
-</tr>
-
-<tr>
-<td>Memiliki KIA</td>
-<td>428</td>
-</tr>
-
-<tr>
-<td>Belum Memiliki KIA</td>
-<td>215</td>
-</tr>
-
-</table>
-
-</div>
-
-<div class="card">
-
-<h3>Grafik Kepemilikan KIA</h3>
-
-<div class="circle-chart"
-style="background:
-conic-gradient(
-#198754 0% 67%,
-#38bdf8 67% 100%
-);">
-
-<div class="chart-center">
-<h2>428</h2>
-<p>Memiliki KIA</p>
-</div>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-</div>
-
-</div>
-
+  <div class="card">
+    <h3>Grafik Kepemilikan KIA</h3><br>
+    <div class="bar-chart-wrapper">
+      <div class="bar-row">
+        <span class="bar-label">Memiliki KIA</span>
+        <div class="bar-track"><div class="bar-fill" style="width:100%;background:#198754;"><span>428</span></div></div>
+        <span class="bar-number">428</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Belum Memiliki KIA</span>
+        <div class="bar-track"><div class="bar-fill" style="width:50.2%;background:#38bdf8;"><span>215</span></div></div>
+        <span class="bar-number">215</span>
+      </div>
+    </div>
+  </div>
 </div>
 
 </main>
-
 </div>
 
 </body>
-
 </html>
